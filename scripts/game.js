@@ -1,4 +1,4 @@
-// game { object }
+//----------------------------------------------------------------- game { object }
 let game = {
     score: 0,
     currentGame: [],
@@ -6,9 +6,17 @@ let game = {
     choices: ['button1', 'button2', 'button3', 'button4'],
 }
 
-module.exports = { game };
 
-// newGame()
+
+//---------------------------------------------------------------------- newGame()
+function newGame() {
+    game.score = 0;
+    game.playerMoves = [];
+    game.currentGame = [];
+    showScore()
+};
+
+
 
 // addTurn()
 
@@ -18,4 +26,9 @@ module.exports = { game };
 
 // playerTurn()
 
-// showScore()
+//------------------------------------------------------------------- showScore()
+function showScore() {
+    document.getElementById('score').innerText = game.score;
+}
+
+module.exports = { game, newGame, showScore };
